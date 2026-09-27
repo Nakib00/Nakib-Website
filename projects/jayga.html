@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jayga Warehouse Management System — a Laravel platform built by Nakibul Islam to run Jayga's warehouse grid rental business end to end." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Jayga Warehouse Management System — Nakibul Islam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['system-ui', '-apple-system', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #ffffff;
+        color: #0a0a0a;
+      }
+      ::selection {
+        background-color: #0a0a0a;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#0a0a0a] antialiased font-sans overflow-x-hidden">
+    <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-200">
+      <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6 py-4 flex justify-between items-center">
+        <a href="../index.html" class="font-semibold tracking-tight">Nakibul Islam</a>
+        <a href="../index.html#projects" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">&larr; Back to portfolio</a>
+      </div>
+    </header>
+
+    <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6">
+      <main class="py-12 sm:py-16">
+        <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-3">Software Engineer &middot; Jayga &middot; Nov 2024&ndash;Mar 2026</p>
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-4">
+          Jayga Warehouse Management System
+        </h1>
+        <div class="flex flex-wrap gap-2 mb-10">
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Laravel 10</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Laravel Sanctum</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Role-Based Access</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Payment Gateway Integration</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Two-Factor Auth</span>
+        </div>
+
+        <div class="prose-content text-base text-gray-700 leading-relaxed space-y-6 max-w-2xl">
+          <p>
+            Jayga's business is simple to explain and hard to run: they rent
+            out warehouse space, grid by grid, to anyone who needs it &mdash;
+            a shopkeeper storing a season's stock, a growing e-commerce
+            brand that's outgrown its own storeroom. Before this system
+            existed, that entire operation lived in spreadsheets and
+            WhatsApp threads. Someone had to remember which grid belonged to
+            which customer, chase down what was owed at the end of the
+            month, and manually work out an invoice by hand. It held
+            together, but barely, and it stopped scaling the moment the
+            business grew past what one person could keep in their head.
+          </p>
+          <p>
+            I was brought in to replace all of that with one system, built
+            from the ground up in Laravel. The first problem to solve
+            wasn't billing or logins &mdash; it was giving the warehouse
+            itself a shape the software could actually reason about.
+            Every warehouse Jayga operates got broken down into individual
+            grids, each with its own size, price, and live occupancy status,
+            so a manager could look at a screen and immediately see what
+            was free, what was rented, and what was sitting idle, across
+            every location at once.
+          </p>
+          <p>
+            Once the space itself was mapped, the rest of the day-to-day
+            work could sit on top of it. Customers submit requests for space
+            or for specific items; staff assign inventory to the right grid
+            and track it in and out; and every quantity &mdash; requested,
+            assigned, received &mdash; stays logged against the exact grid
+            and request it belongs to, so nothing has to be taken on trust
+            or reconstructed from memory later. Different people needed
+            different views into all of this, so access is split by role:
+            admins, staff, and customers each see only what's actually
+            theirs to see.
+          </p>
+          <p>
+            Money was the other half of the problem, and the messier half.
+            Rentals aren't all the same shape &mdash; some are short stays,
+            some run long-term, some need temperature control &mdash; so the
+            billing side had to understand that difference. Give it a date
+            range and it works out exactly what's owed, day by day, against
+            the grid space actually used, and produces a clean, itemized
+            invoice at the end of it. Payments come back in through a real
+            payment gateway instead of a bank transfer someone has to
+            manually reconcile, and every transaction is kept for reporting
+            &mdash; occupancy, revenue, inventory turnover, all of it,
+            instead of being rebuilt from scratch every time someone asks
+            "how are we actually doing this month?"
+          </p>
+          <p>
+            None of that matters if the data underneath it can't be trusted,
+            so the system is locked down properly: token-based authentication
+            for every request, activity logged, two-factor login for anyone
+            with real access, and the architecture built with room to plug
+            into a CRM or accounting software later rather than needing a
+            rewrite. What used to be a business run from memory and
+            spreadsheets is now something Jayga's team opens every morning
+            like a dashboard &mdash; and trusts.
+          </p>
+        </div>
+
+        <div class="mt-14">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">From the dashboard</p>
+          <div class="grid gap-6">
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/jayga/overview.jpg" alt="Jayga admin dashboard overview showing grid, warehouse, billing, and client totals" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                The overview dashboard &mdash; grids, warehouses, billing, and client
+                counts at a glance the moment you log in.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/jayga/issues.jpg" alt="Issues table showing requests and orders with status and priority" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                Every reported issue &mdash; missing items, quantity mismatches,
+                wrong locations &mdash; tracked with a status and priority until
+                it's resolved.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/jayga/invoice.jpg" alt="Generate invoice screen with grid price breakdown by date range" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                Invoice generation: pick a date range and it works out the grid
+                price breakdown and total automatically.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/jayga/grid-items.jpg" alt="Assigned items modal showing quantities requested, assigned, and received per grid" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                Item-level tracking per grid &mdash; requested, assigned, and
+                received quantities, so nothing has to be taken on trust.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mt-14">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-2">In the field</p>
+          <p class="text-sm text-gray-600 leading-relaxed mb-6 max-w-2xl">
+            The dashboard is only half the job. Before any of it went live, I
+            spent time on-site at Jayga's actual warehouses &mdash; walking
+            the racking, counting real boxes, and checking that what the
+            system said matched what was physically sitting on the shelf.
+          </p>
+          <div class="grid gap-6">
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/jayga/warehouse-site.jpg" alt="Exterior view of Jayga's warehouse site with storage buildings and a delivery truck" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                One of Jayga's warehouse sites &mdash; the grids the dashboard
+                tracks are real buildings like these.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/jayga/racking.jpg" alt="Warehouse racking aisle stacked with boxes" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                Inside a grid: racking stacked floor to ceiling, which is
+                exactly what the item-tracking screens have to stay honest
+                about.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/jayga/field-check.jpg" alt="Nakib doing an on-site inventory check in the warehouse aisle" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                On-site, checking recorded quantities against what's actually
+                on the shelf &mdash; the only way to know the system was
+                telling the truth.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mt-14 pt-8 border-t border-gray-200">
+          <a href="../index.html#projects" class="inline-flex items-center gap-1.5 text-sm font-medium border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors">
+            &larr; Back to all projects
+          </a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

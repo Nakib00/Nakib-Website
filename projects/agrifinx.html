@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AgriFinx — a web platform built by Nakibul Islam connecting farmers, investors, and agricultural organizations around financing, insurance, and subsidies." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>AgriFinx — Agricultural Financing Platform — Nakibul Islam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['system-ui', '-apple-system', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #ffffff;
+        color: #0a0a0a;
+      }
+      ::selection {
+        background-color: #0a0a0a;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#0a0a0a] antialiased font-sans overflow-x-hidden">
+    <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-200">
+      <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6 py-4 flex justify-between items-center">
+        <a href="../index.html" class="font-semibold tracking-tight">Nakibul Islam</a>
+        <a href="../index.html#projects" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">&larr; Back to portfolio</a>
+      </div>
+    </header>
+
+    <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6">
+      <main class="py-12 sm:py-16">
+        <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-3">Web Platform &middot; Agricultural Finance</p>
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-4">
+          AgriFinx: Connecting Farmers, Investors, and Financing
+        </h1>
+        <div class="flex flex-wrap gap-2 mb-10">
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Microloans</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Crop Insurance</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Subsidy Management</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Investment Platform</span>
+        </div>
+
+        <div class="prose-content text-base text-gray-700 leading-relaxed space-y-6 max-w-2xl">
+          <p>
+            A farmer with a good crop plan and no capital, an investor with
+            capital and no way to reach that farmer, and an agricultural
+            organization stuck in the middle trying to run loans, insurance,
+            and subsidies through paperwork &mdash; that's the gap AgriFinx
+            was built to close. Instead of three separate, disconnected
+            processes, it puts farmers, investors, and organizations on the
+            same platform, each with exactly the tools their side of the
+            relationship needs.
+          </p>
+          <p>
+            For a farmer, that means being able to put a crop project in
+            front of the platform &mdash; what you're planting, the expected
+            yield, the numbers behind it &mdash; and get a risk assessment
+            back before committing real money. From there, the same project
+            can be used to apply for a microloan, insurance coverage against
+            crop failure, or a subsidy through a local agricultural officer,
+            all from one place instead of three separate offices.
+          </p>
+          <p>
+            For an investor, a crop project isn't just a good story &mdash;
+            it's something they can actually put money behind, alongside
+            everyone else's, and track. AgriFinx lets them invest directly
+            in individual crop projects or in the agricultural organizations
+            that supply loans, insurance, and subsidies to farmers, turning
+            "supporting agriculture" from a donation into a real,
+            diversified investment, with a dashboard that shows exactly
+            where the money went and what it's earning.
+          </p>
+          <p>
+            Agricultural organizations sit in the middle of that exchange:
+            they take in investment, decide how to allocate it across crop
+            projects, and are the ones actually issuing the microloans and
+            insurance coverage farmers apply for. And behind all of it, an
+            admin panel keeps the platform itself honest &mdash; adding new
+            crops and keeping their prices current so every risk assessment
+            and every investment decision is working off real market
+            numbers, not stale data.
+          </p>
+        </div>
+
+        <div class="mt-14">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">Around the Platform</p>
+          <div class="grid gap-6">
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/agrifinx/homepage.jpg" alt="AgriFinx homepage with hero banner, services, our story, agriculture projects, and investor sections" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                The homepage: microloans, insurance, agriculture projects,
+                and investing, laid out as the four things AgriFinx
+                actually does.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/agrifinx/investor-dashboard.png" alt="Investor dashboard showing total investment and a crop project vs organization investment comparison chart" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                An investor's dashboard &mdash; total invested, broken down
+                by crop projects versus organizations, at a glance.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/agrifinx/farmer-dashboard.png" alt="Farmer dashboard listing invested crop projects with investment amount, date, and percentage rate, plus a chart" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                A farmer's dashboard &mdash; every crop project that's been
+                funded, with the amount, date, and rate, charted out.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mt-14 pt-8 border-t border-gray-200">
+          <a href="../index.html#projects" class="inline-flex items-center gap-1.5 text-sm font-medium border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors">
+            &larr; Back to all projects
+          </a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

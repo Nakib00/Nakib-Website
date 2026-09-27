@@ -3,485 +3,875 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Md Nakibul Islam - Portfolio</title>
+    <meta name="description" content="Nakibul Islam — software engineer and founder. Co-Founder &amp; CEO of ZAN Tech, building Punosristi (EcoLoop BD). Backend, mobile/web, and IoT/hardware." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Nakibul Islam</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap"
-      rel="stylesheet"
-    />
     <script>
       tailwind.config = {
         theme: {
           extend: {
-            colors: {
-              anthropic: {
-                bg: '#F9F8F6',
-                text: '#2C2A29',
-                muted: '#5F5C5B',
-                accent: '#D47B5A',
-                border: '#E8E5E1'
-              }
-            },
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Newsreader', 'serif'],
-            }
-          }
-        }
-      }
+              sans: ['system-ui', '-apple-system', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            },
+            colors: {
+              accent: '#2563eb',
+            },
+          },
+        },
+      };
     </script>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       body {
-        background-color: #F9F8F6;
-        color: #2C2A29;
+        background-color: #ffffff;
+        color: #0a0a0a;
       }
       ::selection {
-        background-color: #D47B5A;
+        background-color: #0a0a0a;
         color: white;
+      }
+      #mobile-nav {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      #mobile-nav.open {
+        max-height: 20rem;
       }
     </style>
   </head>
-  <body class="bg-anthropic-bg text-anthropic-text antialiased font-sans selection:bg-anthropic-accent selection:text-white">
-    <div class="container mx-auto max-w-6xl px-6 py-10 md:py-16">
-      <!-- Header Navigation -->
-      <header class="flex justify-between items-center mb-20 md:mb-32">
-        <a href="#" class="text-3xl font-serif tracking-tight font-medium text-anthropic-text">nakib.</a>
-        <a
-          href="https://www.linkedin.com/in/nakibulislam00/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-sm font-medium text-anthropic-muted hover:text-anthropic-text transition-colors border-b border-transparent hover:border-anthropic-text pb-0.5"
-          >LinkedIn ↗</a
+  <body class="bg-white text-[#0a0a0a] antialiased font-sans overflow-x-hidden">
+    <!-- Sticky Nav -->
+    <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-200">
+      <div class="container mx-auto max-w-3xl lg:max-w-4xl xl:max-w-5xl px-4 sm:px-6 py-4 flex justify-between items-center">
+        <a href="#" class="font-semibold tracking-tight">Nakibul Islam</a>
+        <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
+          <a href="#experience" class="hover:text-black transition-colors">Experience</a>
+          <a href="#ventures" class="hover:text-black transition-colors">Ventures</a>
+          <a href="#projects" class="hover:text-black transition-colors">Projects</a>
+          <a href="#publications" class="hover:text-black transition-colors">Publications</a>
+          <a href="#contact" class="hover:text-black transition-colors">Contact</a>
+        </nav>
+        <button
+          id="nav-toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          class="md:hidden p-2 -mr-2 text-gray-700"
         >
-      </header>
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <nav id="mobile-nav" class="md:hidden border-t border-gray-200">
+        <div class="container mx-auto max-w-3xl lg:max-w-4xl xl:max-w-5xl px-4 sm:px-6 py-3 flex flex-col text-sm text-gray-600">
+          <a href="#experience" class="py-2.5 border-b border-gray-100 hover:text-black transition-colors">Experience</a>
+          <a href="#ventures" class="py-2.5 border-b border-gray-100 hover:text-black transition-colors">Ventures</a>
+          <a href="#projects" class="py-2.5 border-b border-gray-100 hover:text-black transition-colors">Projects</a>
+          <a href="#publications" class="py-2.5 border-b border-gray-100 hover:text-black transition-colors">Publications</a>
+          <a href="#contact" class="py-2.5 hover:text-black transition-colors">Contact</a>
+        </div>
+      </nav>
+    </header>
 
+    <div class="container mx-auto max-w-3xl lg:max-w-4xl xl:max-w-5xl px-4 sm:px-6">
       <main>
-        <!-- Hero Section -->
-        <section
-          class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start mb-24 md:mb-40"
-        >
-          <div class="md:col-span-8 space-y-8">
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif tracking-tight leading-[1.1] text-anthropic-text font-medium">
-              Hi, I'm Md Nakibul Islam.
+        <!-- Hero -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 items-start pt-10 pb-14 sm:pt-14 sm:pb-16 md:pt-20 md:pb-24">
+          <div class="md:col-span-2 space-y-5 order-2 md:order-1">
+            <div class="flex items-center gap-2">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <p class="text-xs font-medium tracking-widest text-gray-500 uppercase">Dhaka &middot; Bangladesh &middot; Open to opportunities</p>
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight">
+              Nakibul Islam
             </h1>
-            <div
-              class="text-lg md:text-xl text-anthropic-muted space-y-6 max-w-2xl font-light leading-relaxed"
-            >
+            <p class="text-lg text-gray-800 leading-relaxed">
+              Founder and engineer who turns problems nobody's solving
+              into things people can actually use.
+            </p>
+            <div class="text-base text-gray-600 space-y-4 leading-relaxed max-w-xl">
               <p>
-                I'm a software engineer and founder based in Dhaka,
-                Bangladesh. I run <strong class="font-medium text-anthropic-text">ZAN Tech</strong>, a bootstrapped
-                STEM &amp; robotics education company for KG–Class 12
-                students, and I'm building
-                <strong class="font-medium text-anthropic-text">Punosristi (EcoLoop BD)</strong>, an IoT-powered
-                reverse vending machine platform tackling Bangladesh's
-                plastic waste problem. My technical background spans backend
-                engineering (Node.js/Fastify, PostgreSQL, Redis), mobile
-                &amp; web (React Native, Next.js), and IoT/hardware
-                (Raspberry Pi, ESP32/Arduino, MQTT, computer vision with
-                YOLOv8).
+                It started in university, packaging robotics parts for
+                classmates who had no idea what to buy for their course
+                projects &mdash; a small hustle that turned into
+                <strong class="text-black font-medium">ZAN Tech</strong>, a
+                robotics education company I co-founded and still run. What
+                keeps me in it is watching that same problem play out at a
+                much bigger scale: kids outside Dhaka who are just as
+                curious as anyone, with far fewer chances to ever touch a
+                robot. That's the whole reason
+                <a href="projects/uddipon.html" class="text-black border-b border-black hover:text-gray-600 hover:border-gray-600 transition-colors">Project Uddipon</a>
+                exists &mdash; free workshops we've now run for 5,000+
+                students across Bangladesh, and the number I actually care
+                about most.
               </p>
               <p>
-                I hold a CSE degree from Independent University, Bangladesh,
-                and I'm currently pursuing an MSc in Software Engineering
-                there. My co-authored research spans IoT sensing and Bangla
-                speech datasets, published in IEEE and on Mendeley Data.
-                Let's connect to explore opportunities in tech, robotics
-                education, and sustainability.
-              </p>
-              <div class="pt-4">
+                That same instinct &mdash; see a problem nobody's fixing, go
+                build the fix &mdash; is what led me to
+                <strong class="text-black font-medium">Punosristi (EcoLoop BD)</strong>,
+                a platform I'm building to take on Bangladesh's plastic
+                waste problem directly instead of writing another report
+                about it. Alongside that, I do peer-reviewed research into
+                problems I find genuinely interesting &mdash; how Bangla is
+                actually spoken outside the news broadcast version of it,
+                how secure a small IoT network can really be made, how
+                farmers get the information they need before a season is
+                already ruined &mdash; published in IEEE and Elsevier's Data
+                in Brief (see my
                 <a
-                  href="https://www.linkedin.com/in/nakibulislam00/"
+                  href="https://scholar.google.com/citations?user=ya3_CWsAAAAJ&amp;hl=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white bg-anthropic-accent hover:bg-[#c26d4c] rounded-full transition-colors shadow-sm"
-                  >Connect on LinkedIn</a
-                >
-              </div>
+                  class="text-black border-b border-black hover:text-gray-600 hover:border-gray-600 transition-colors"
+                  >Google Scholar profile</a
+                >). I hold a CSE degree from Independent University,
+                Bangladesh, and I'm finishing an MSc in Software Engineering
+                there, mostly because I've never been able to stop at
+                "good enough." And somewhere in between all of that, I also
+                edit video on the side &mdash; which is how one of my cuts
+                ended up as an official music video for a Bangladeshi band.
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2 text-sm font-medium">
+              <a href="mailto:nakibulislam54@gmail.com" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-black text-white hover:bg-gray-800 transition-colors">Reach me &rarr;</a>
+              <a
+                href="https://www.linkedin.com/in/nakibulislam00/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-600 border-b border-transparent hover:text-black hover:border-black transition-colors pb-0.5"
+                >LinkedIn &#8599;</a
+              >
+              <a
+                href="https://github.com/ZAN-Tech-bd"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-600 border-b border-transparent hover:text-black hover:border-black transition-colors pb-0.5"
+                >GitHub &#8599;</a
+              >
+              <a
+                href="https://www.facebook.com/nakibulislam0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-600 border-b border-transparent hover:text-black hover:border-black transition-colors pb-0.5"
+                >Facebook &#8599;</a
+              >
+              <a
+                href="https://www.instagram.com/nakibulislam00/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-600 border-b border-transparent hover:text-black hover:border-black transition-colors pb-0.5"
+                >Instagram &#8599;</a
+              >
             </div>
           </div>
-          <div class="md:col-span-4 w-full aspect-[4/5] overflow-hidden rounded-xl bg-anthropic-border/50">
-            <!-- Replaced local image with a placeholder. Replace 'src' with your image path. -->
+          <div class="order-1 md:order-2 w-full max-w-[220px] mx-auto md:max-w-none aspect-[4/5] overflow-hidden rounded-xl bg-gray-100 ring-1 ring-gray-200 shadow-sm">
             <img
               src="image/nakib.png"
-              alt="Md Nakibul Islam"
+              alt="Nakibul Islam"
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
         </section>
 
-        <!-- Sections Container -->
-        <section class="space-y-16 mb-20 md:mb-32">
-          <!-- Experience -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 pt-16 border-t border-anthropic-border">
-            <div class="md:col-span-4">
-              <h2
-                class="text-2xl font-serif text-anthropic-text font-medium"
-              >
-                Experience
-              </h2>
-            </div>
-            <div class="md:col-span-8 space-y-12">
-              <div>
-                <h3 class="text-xl font-serif text-anthropic-text mb-1">
-                  Co-Founder &amp; CEO
-                </h3>
-                <p class="text-base text-anthropic-muted font-medium">ZAN Tech · Full-time</p>
-                <p class="text-sm text-anthropic-muted/80 mt-1">Present · Uttara, Dhaka</p>
-              </div>
-              <div>
-                <h3 class="text-xl font-serif text-anthropic-text mb-1">
-                  Software Engineer
-                </h3>
-                <p class="text-base text-anthropic-muted font-medium">Jayga · Full-time</p>
-                <p class="text-sm text-anthropic-muted/80 mt-1">Nov 2024 - Mar 2026 · Hybrid</p>
-              </div>
-              <div>
-                <h3 class="text-xl font-serif text-anthropic-text mb-1">Instructor</h3>
-                <p class="text-base text-anthropic-muted font-medium">Instructory · Freelance</p>
-                <p class="text-sm text-anthropic-muted/80 mt-1">2020 - Aug 2024 · Dhaka</p>
-              </div>
-              <div>
-                <h3 class="text-xl font-serif text-anthropic-text mb-1">
-                  Project president
-                </h3>
-                <p class="text-base text-anthropic-muted font-medium">
-                  Fgc science club · Full-time
-                </p>
-                <p class="text-sm text-anthropic-muted/80 mt-1">Feb 2017 - Mar 2018 · Chattogram</p>
-              </div>
-            </div>
+        <!-- Currently / Background / Open -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-8 py-10 border-t border-gray-200 text-sm">
+          <div>
+            <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-2">Currently</p>
+            <p class="text-gray-500 text-xs mb-1">Present &middot; Uttara, Dhaka</p>
+            <p class="text-gray-800">
+              Co-Founder &amp; CEO, <span class="font-medium text-black">ZAN Tech</span>
+              &mdash; curriculum, robotics kits, and school B2B partnerships,
+              plus Project Uddipon, free nationwide STEM workshops.
+            </p>
           </div>
+          <div>
+            <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-2">Background</p>
+            <p class="text-gray-800">
+              CSE graduate, Independent University, Bangladesh. Building
+              software and hardware professionally since 2020.
+            </p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-2">Open</p>
+            <p class="text-gray-800">
+              Open to opportunities in tech, robotics education, and
+              sustainability.
+            </p>
+          </div>
+        </section>
 
-          <!-- Ventures -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 pt-16 border-t border-anthropic-border">
-            <div class="md:col-span-4">
-              <h2
-                class="text-2xl font-serif text-anthropic-text font-medium"
-              >
-                Ventures
-              </h2>
-            </div>
-            <div class="md:col-span-8 space-y-12">
-              <div class="group">
-                <h3 class="text-xl font-serif text-anthropic-text mb-3">
-                  ZAN Tech
-                </h3>
-                <p class="text-base text-anthropic-muted font-light leading-relaxed">
-                  Bootstrapped STEM &amp; robotics education company for
-                  KG–Class 12 students, based in Uttara, Dhaka. Builds
-                  curriculum (Explorer/Builder/Innovator/Specialist tracks),
-                  robotics kits (TriBot, Innovator Starter Kit), and school
-                  B2B partnerships, plus runs Project Uddipon — free
-                  nationwide STEM workshops.
+        <!-- Experience -->
+        <section id="experience" class="py-14 border-t border-gray-200 scroll-mt-20">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-8">Experience</p>
+          <div class="space-y-8">
+            <div class="flex flex-col sm:flex-row sm:gap-6 group">
+              <p class="text-xs text-gray-500 sm:w-32 shrink-0 mb-1 sm:mb-0">Present</p>
+              <div>
+                <h3 class="font-medium">Co-Founder &amp; CEO &middot; ZAN Tech</h3>
+                <p class="text-sm text-gray-500 mt-0.5">Full-time &middot; Uttara, Dhaka</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-xl">
+                  Started this with Hana Sultan Chowdhury as a way to package
+                  robotics parts for classmates who didn't know what to buy
+                  for their course projects &mdash; it's since grown into a
+                  robotics education company with its own office, courses
+                  for Class 1&ndash;12, a parts store, and Project Uddipon,
+                  our free nationwide STEM workshop initiative.
                 </p>
                 <a
-                  href="https://zantechbd.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-anthropic-accent hover:text-[#c26d4c] transition-colors"
+                  href="projects/zantech.html"
+                  class="inline-flex items-center gap-1 mt-3 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
                 >
-                  zantechbd.com
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  >
-                    <path d="M7 17l9.2-9.2M17 17V7H7" />
-                  </svg>
-                </a>
-              </div>
-              <div class="group">
-                <h3 class="text-xl font-serif text-anthropic-text mb-3">
-                  Punosristi (EcoLoop BD)
-                </h3>
-                <p class="text-base text-anthropic-muted font-light leading-relaxed">
-                  IoT reverse vending machine platform for plastic bottle
-                  recovery in Bangladesh, built under ZAN Tech. Raspberry Pi
-                  4B + YOLOv8n bottle detection, React Native consumer app,
-                  Next.js admin dashboard, and a Fastify/PostgreSQL/Redis
-                  backend, with a loyalty-points recycling model.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 pt-16 border-t border-anthropic-border">
-            <div class="md:col-span-4">
-              <h2
-                class="text-2xl font-serif text-anthropic-text font-medium"
-              >
-                Education
-              </h2>
-            </div>
-            <div class="md:col-span-8 space-y-12">
-              <div>
-                <h3 class="text-xl font-serif text-anthropic-text mb-1">
-                  Independent University, Bangladesh
-                </h3>
-                <p class="text-base text-anthropic-muted font-medium">
-                  MSc, Software Engineering
-                </p>
-                <p class="text-sm text-anthropic-muted/80 mt-1">In progress</p>
-              </div>
-              <div>
-                <h3 class="text-xl font-serif text-anthropic-text mb-1">
-                  Independent University, Bangladesh
-                </h3>
-                <p class="text-base text-anthropic-muted font-medium">
-                  BSc, Computer Science and Engineering
-                </p>
-                <p class="text-sm text-anthropic-muted/80 mt-1">2020 - 2024</p>
-              </div>
-              <div>
-                <h3 class="text-xl font-serif text-anthropic-text mb-1">
-                  Feni Government College
-                </h3>
-                <p class="text-base text-anthropic-muted font-medium">HSC</p>
-                <p class="text-sm text-anthropic-muted/80 mt-1">2016 - 2018</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Skills -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 pt-16 border-t border-anthropic-border">
-            <div class="md:col-span-4">
-              <h2
-                class="text-2xl font-serif text-anthropic-text font-medium"
-              >
-                Skills
-              </h2>
-            </div>
-            <div class="md:col-span-8 space-y-8">
-              <div>
-                <p class="text-base font-serif text-anthropic-text mb-3">
-                  Backend
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">Node.js (Fastify)</span>
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">PostgreSQL</span>
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">Redis</span>
-                </div>
-              </div>
-              <div>
-                <p class="text-base font-serif text-anthropic-text mb-3">
-                  Mobile &amp; Web
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">React Native</span>
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">Next.js</span>
-                </div>
-              </div>
-              <div>
-                <p class="text-base font-serif text-anthropic-text mb-3">
-                  IoT &amp; Hardware
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">Raspberry Pi</span>
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">ESP32 / Arduino</span>
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">MQTT</span>
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">CoAP</span>
-                </div>
-              </div>
-              <div>
-                <p class="text-base font-serif text-anthropic-text mb-3">
-                  ML / Computer Vision
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">Python</span>
-                  <span class="px-4 py-1.5 text-xs font-medium text-anthropic-muted bg-white border border-anthropic-border rounded-full shadow-sm">YOLOv8</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Publications -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 pt-16 border-t border-anthropic-border">
-            <div class="md:col-span-4">
-              <h2
-                class="text-2xl font-serif text-anthropic-text font-medium"
-              >
-                Publications
-              </h2>
-            </div>
-            <div class="md:col-span-8 space-y-12">
-              <div class="group">
-                <h3 class="text-xl font-serif text-anthropic-text mb-2 leading-snug">
-                  BRADS: A Multipurpose Audio Dataset For Bangla Regional Word
-                  Detection
-                </h3>
-                <p class="text-sm text-anthropic-muted font-medium">
-                  Mendeley Data · Feb 6, 2025
-                </p>
-                <a
-                  href="https://data.mendeley.com/datasets/33khhwbhwn/2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-anthropic-accent hover:text-[#c26d4c] transition-colors"
-                >
-                  Show publication
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  >
-                    <path d="M7 17l9.2-9.2M17 17V7H7" />
-                  </svg>
-                </a>
-              </div>
-              <div class="group">
-                <h3 class="text-xl font-serif text-anthropic-text mb-2 leading-snug">
-                  BRWDS: A Multipurpose Dataset For Bangla Regional Word
-                  Detection
-                </h3>
-                <p class="text-sm text-anthropic-muted font-medium">
-                  Mendeley Data · Nov 13, 2024
-                </p>
-                <a
-                  href="https://data.mendeley.com/datasets/6pd2c48m66/4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-anthropic-accent hover:text-[#c26d4c] transition-colors"
-                >
-                  Show publication
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  >
-                    <path d="M7 17l9.2-9.2M17 17V7H7" />
-                  </svg>
-                </a>
-              </div>
-              <div class="group">
-                <h3 class="text-xl font-serif text-anthropic-text mb-2 leading-snug">
-                  IoT-based Salinity Detection Using Conductivity and
-                  Temperature for Developing Countries
-                </h3>
-                <p class="text-sm text-anthropic-muted font-medium">
-                  R10 HTC 2023 MB101 · Sep 16, 2023
-                </p>
-                <a
-                  href="https://ieeexplore.ieee.org/document/10461801"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-anthropic-accent hover:text-[#c26d4c] transition-colors"
-                >
-                  Show publication
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  >
-                    <path d="M7 17l9.2-9.2M17 17V7H7" />
-                  </svg>
+                  How it started &rarr;
                 </a>
               </div>
             </div>
-          </div>
-
-          <!-- Volunteering -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 pt-16 border-t border-anthropic-border">
-            <div class="md:col-span-4">
-              <h2
-                class="text-2xl font-serif text-anthropic-text font-medium"
-              >
-                Volunteering
-              </h2>
-            </div>
-            <div class="md:col-span-8 space-y-12">
+            <div class="flex flex-col sm:flex-row sm:gap-6 group">
+              <p class="text-xs text-gray-500 sm:w-32 shrink-0 mb-1 sm:mb-0">Nov 2024&ndash;Mar 2026</p>
               <div>
-                <h3 class="text-xl font-serif text-anthropic-text mb-1">
-                  Student On Duty (SOD)
-                </h3>
-                <p class="text-base text-anthropic-muted font-medium">
-                  Independent University, Bangladesh
+                <h3 class="font-medium">Software Engineer &middot; Jayga</h3>
+                <p class="text-sm text-gray-500 mt-0.5">Full-time &middot; Hybrid</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-xl">
+                  Brought in to take Jayga's warehouse rental business off
+                  spreadsheets and WhatsApp and put it on a real system. I
+                  designed and built the whole platform in Laravel &mdash;
+                  grid-by-grid space tracking, billing and invoicing,
+                  role-based access for admins, staff, and customers &mdash;
+                  then went out to the actual warehouses to test it against
+                  real racking, real boxes, and real stock counts before it
+                  went live.
                 </p>
-                <p class="text-sm text-anthropic-muted/80 mt-1">
-                  Aug 2022 - Nov 2023
+                <a
+                  href="projects/jayga.html"
+                  class="inline-flex items-center gap-1 mt-3 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
+                >
+                  View project details &rarr;
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:gap-6 group">
+              <p class="text-xs text-gray-500 sm:w-32 shrink-0 mb-1 sm:mb-0">2020&ndash;Aug 2024</p>
+              <div>
+                <h3 class="font-medium">Instructor &middot; Instructory</h3>
+                <p class="text-sm text-gray-500 mt-0.5">Freelance &middot; Dhaka</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-xl">
+                  Alongside the day job, I teach video editing on Instructory
+                  under my own profile &mdash; Adobe Premiere Pro from the
+                  ground up, the way I'd have wanted to learn it. What
+                  started as documenting my own editing workflow grew into a
+                  full course with 600+ enrollments, a 5-star rating, and a
+                  Level 3 Instructor badge. It's led to real work too: I
+                  edited the official video for AVASH's song "Camera" after
+                  the band found me through the course.
+                </p>
+                <a
+                  href="projects/instructory.html"
+                  class="block mt-3 max-w-xs rounded-lg overflow-hidden border border-gray-200 group-hover:border-gray-300 transition-colors"
+                >
+                  <div class="aspect-video overflow-hidden bg-gray-100">
+                    <img src="image/instructory/avash-session.jpg" alt="Working session with Thanzin Tuni from AVASH" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                </a>
+                <a
+                  href="projects/instructory.html"
+                  class="inline-flex items-center gap-1 mt-3 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
+                >
+                  View project details &rarr;
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:gap-6">
+              <p class="text-xs text-gray-500 sm:w-32 shrink-0 mb-1 sm:mb-0">Jan 2023&ndash;Jun 2024</p>
+              <div>
+                <h3 class="font-medium">Research Assistant &middot; Independent University, Bangladesh</h3>
+                <p class="text-sm text-gray-500 mt-0.5">Dhaka</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-xl">
+                  Worked hardware research projects end to end &mdash; building
+                  the devices, running the experiments, and writing up the
+                  results &mdash; which turned into several published papers
+                  and hands-on hardware, including the IoT-based soil
+                  salinity detection system later published at IEEE R10-HTC.
                 </p>
               </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:gap-6">
+              <p class="text-xs text-gray-500 sm:w-32 shrink-0 mb-1 sm:mb-0">Aug 2022&ndash;Nov 2023</p>
               <div>
-                <h3 class="text-xl font-serif text-anthropic-text mb-1">
-                  Research Assistant
-                </h3>
-                <p class="text-base text-anthropic-muted font-medium">
-                  Independent University, Bangladesh
+                <h3 class="font-medium">Student On Duty (SOD) &middot; Independent University, Bangladesh</h3>
+                <p class="text-sm text-gray-500 mt-0.5">Dhaka</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-xl">
+                  Taught two lab courses in parallel. In the CSE101 lab, I
+                  walked first-year students through Python from scratch
+                  &mdash; their first real code. In the CIS lab, the subject
+                  wasn't programming at all; it was the basics everyone's
+                  expected to already know but rarely gets taught &mdash; how
+                  to actually use Microsoft 365, how to structure a research
+                  paper, write a proper report, and build something useful
+                  in Excel and Power BI.
                 </p>
-                <p class="text-sm text-anthropic-muted/80 mt-1">
-                  Jan 2023 - Jun 2024
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:gap-6">
+              <p class="text-xs text-gray-500 sm:w-32 shrink-0 mb-1 sm:mb-0">Feb 2017&ndash;Mar 2018</p>
+              <div>
+                <h3 class="font-medium">Project President &middot; FGC Science Club</h3>
+                <p class="text-sm text-gray-500 mt-0.5">Full-time &middot; Feni</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-xl">
+                  Founded FGC Science Club at Feni Government College as a
+                  founding member &mdash; there wasn't a science club there
+                  before it, so building one meant registering it,
+                  recruiting the first members, and figuring out from
+                  scratch what it would actually do. As project president, I
+                  ran it like a real organization: workshops and
+                  competitions that gave other students at FGC a way into
+                  science and robotics that simply hadn't existed there
+                  before.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="py-20 md:py-32 border-t border-anthropic-border">
-          <div
-            class="flex flex-col md:flex-row justify-between items-start gap-12"
+        <!-- Ventures -->
+        <section id="ventures" class="py-14 border-t border-gray-200 scroll-mt-20">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-8">Selected Ventures</p>
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div class="group p-5 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
+              <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-2">Education &middot; 2020&rarr;</p>
+              <h3 class="font-medium text-lg mb-2">ZAN Tech</h3>
+              <p class="text-gray-600 leading-relaxed text-sm">
+                Bootstrapped STEM &amp; robotics education company for
+                KG&ndash;Class 12 students, based in Uttara, Dhaka. Builds
+                curriculum (Explorer/Builder/Innovator/Specialist tracks),
+                robotics kits (TriBot, Innovator Starter Kit), and school
+                B2B partnerships, plus runs
+                <a href="projects/uddipon.html" class="text-black border-b border-black hover:text-gray-600 hover:border-gray-600 transition-colors">Project Uddipon</a>
+                &mdash; free nationwide STEM workshops.
+              </p>
+              <div class="flex flex-wrap gap-x-4 gap-y-1 mt-4 text-sm font-medium">
+                <a
+                  href="https://zantechbd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
+                >
+                  zantechbd.com &rarr;
+                </a>
+                <a
+                  href="projects/zantech.html"
+                  class="inline-flex items-center gap-1 text-gray-500 border-b border-transparent hover:text-black hover:border-black pb-0.5 transition-colors"
+                >
+                  How it started &rarr;
+                </a>
+              </div>
+            </div>
+            <div class="group p-5 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all">
+              <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-2">Hardware &middot; IoT</p>
+              <h3 class="font-medium text-lg mb-2">Punosristi (EcoLoop BD)</h3>
+              <p class="text-gray-600 leading-relaxed text-sm">
+                IoT reverse vending machine platform for plastic bottle
+                recovery in Bangladesh, built under ZAN Tech. Raspberry Pi
+                4B + YOLOv8n bottle detection, React Native consumer app,
+                Next.js admin dashboard, and a Fastify/PostgreSQL/Redis
+                backend, with a loyalty-points recycling model.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-14 border-t border-gray-200 scroll-mt-20">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-8">Featured Projects</p>
+          <div class="grid gap-6">
+            <a
+              href="projects/uddipon.html"
+              class="flex flex-col sm:flex-row sm:items-stretch rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all group overflow-hidden"
+            >
+              <div class="w-full sm:w-56 md:w-64 h-48 shrink-0 overflow-hidden bg-gray-100">
+                <img src="image/projects/uddipon/workshop.jpg" alt="Nakib teaching a large crowd of students at a Project Uddipon workshop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-5 flex-1 min-w-0">
+                <div class="flex items-start justify-between gap-4 flex-wrap">
+                  <div>
+                    <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-2">Co-Founder &amp; Lead Trainer &middot; ZAN Tech</p>
+                    <h3 class="font-medium text-lg mb-2">Project Uddipon</h3>
+                  </div>
+                  <span class="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 shrink-0">5000+ Students</span>
+                </div>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  A free, nationwide STEM &amp; robotics workshop initiative
+                  under ZAN Tech: instead of waiting for students outside
+                  Dhaka to find their way to a lab, we bring the robots,
+                  sensors, and laptops to their campus. 5,000+ students
+                  reached across 15+ institutions so far, with nearly half
+                  of every crowd being girls.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Robotics Workshops</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Girls in STEM</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">100% Free</span>
+                </div>
+                <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors">
+                  View project details &rarr;
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="projects/jayga.html"
+              class="flex flex-col sm:flex-row sm:items-stretch rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all group overflow-hidden"
+            >
+              <div class="w-full sm:w-56 md:w-64 h-48 shrink-0 overflow-hidden bg-gray-100">
+                <img src="image/projects/jayga/overview.jpg" alt="Jayga admin dashboard overview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-5 flex-1 min-w-0">
+                <div class="flex items-start justify-between gap-4 flex-wrap">
+                  <div>
+                    <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-2">Software Engineer &middot; Jayga</p>
+                    <h3 class="font-medium text-lg mb-2">Jayga Warehouse Management System</h3>
+                  </div>
+                  <span class="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 shrink-0">Laravel</span>
+                </div>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  Jayga rents out warehouse space by the grid, and before this
+                  system existed, that whole operation ran on spreadsheets and
+                  WhatsApp messages. I built the platform, from the ground up,
+                  that turned it into a real business: every grid trackable,
+                  every rental billed automatically, every request and issue
+                  logged in one place instead of someone's memory.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Laravel 10</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Warehouse Management</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Billing &amp; Invoicing</span>
+                </div>
+                <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors">
+                  View project details &rarr;
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="projects/bili.html"
+              class="flex flex-col sm:flex-row sm:items-stretch rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all group overflow-hidden"
+            >
+              <div class="w-full sm:w-56 md:w-64 h-48 shrink-0 overflow-hidden bg-gray-100">
+                <img src="image/projects/bili/robot-demo.jpg" alt="A student talking to the physical BILI reception robot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-5 flex-1 min-w-0">
+                <div class="flex items-start justify-between gap-4 flex-wrap">
+                  <div>
+                    <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-2">Research &amp; Robotics &middot; Independent University, Bangladesh</p>
+                    <h3 class="font-medium text-lg mb-2">BILI: Bilingual Reception Assistant Robot</h3>
+                  </div>
+                  <span class="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 shrink-0">CNN&ndash;BiLSTM</span>
+                </div>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  Most Bangla voice assistants only understand the standard
+                  dialect, leaving regional speakers locked out. BILI is a
+                  reception robot &mdash; inspired by JARVIS &mdash; that
+                  detects a speaker's Bangla dialect with 96.8% accuracy and
+                  replies in it, running live at a university reception desk.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Dialect Classification</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Speech-to-Text</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Text-to-Speech</span>
+                </div>
+                <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors">
+                  View project details &rarr;
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="projects/agrifinx.html"
+              class="flex flex-col sm:flex-row sm:items-stretch rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all group overflow-hidden"
+            >
+              <div class="w-full sm:w-56 md:w-64 h-48 shrink-0 overflow-hidden bg-gray-100">
+                <img src="image/projects/agrifinx/homepage.jpg" alt="AgriFinx homepage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-5 flex-1 min-w-0">
+                <div class="flex items-start justify-between gap-4 flex-wrap">
+                  <div>
+                    <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-2">Web Platform &middot; Agricultural Finance</p>
+                    <h3 class="font-medium text-lg mb-2">AgriFinx</h3>
+                  </div>
+                  <span class="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 shrink-0">Fintech</span>
+                </div>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  A platform connecting farmers, investors, and agricultural
+                  organizations in one place: farmers create crop projects and
+                  apply for microloans, insurance, and subsidies, while
+                  investors fund those projects and organizations directly
+                  &mdash; each side of a relationship that used to run on
+                  paperwork now runs through one dashboard.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Microloans</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Crop Insurance</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Investment Platform</span>
+                </div>
+                <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors">
+                  View project details &rarr;
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="projects/salinity.html"
+              class="flex flex-col sm:flex-row sm:items-stretch rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all group overflow-hidden"
+            >
+              <div class="w-full sm:w-56 md:w-64 h-48 shrink-0 overflow-hidden bg-gray-100">
+                <img src="image/projects/salinity/sensor-closeup.jpg" alt="Salinity sensor housing with probes inserted into soil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-5 flex-1 min-w-0">
+                <div class="flex items-start justify-between gap-4 flex-wrap">
+                  <div>
+                    <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-2">Research &amp; Hardware &middot; IEEE R10-HTC 2023</p>
+                    <h3 class="font-medium text-lg mb-2">IoT-Based Soil Salinity Detection</h3>
+                  </div>
+                  <span class="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 shrink-0">~630 &#2547;</span>
+                </div>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  A portable, low-cost sensor that reads soil salinity and
+                  temperature on the spot and streams it live to a phone
+                  dashboard &mdash; built for farmers across Bangladesh and
+                  Myanmar's coastal regions, where salinity varies too much
+                  from field to field for a single national average to mean
+                  anything.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">ESP8266</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Conductivity Sensor</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Real-Time Monitoring</span>
+                </div>
+                <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors">
+                  View project details &rarr;
+                </span>
+              </div>
+            </a>
+
+            <a
+              href="projects/women-safety.html"
+              class="flex flex-col sm:flex-row sm:items-stretch rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all group overflow-hidden"
+            >
+              <div class="w-full sm:w-56 md:w-64 h-48 shrink-0 overflow-hidden bg-gray-100">
+                <img src="image/projects/women-safety/device-render.jpg" alt="Women Safety SOS button device render" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-5 flex-1 min-w-0">
+                <div class="flex items-start justify-between gap-4 flex-wrap">
+                  <div>
+                    <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-2">Research &amp; Hardware &middot; Independent University, Bangladesh</p>
+                    <h3 class="font-medium text-lg mb-2">Women Safety Device &amp; System</h3>
+                  </div>
+                  <span class="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 shrink-0">ESP32</span>
+                </div>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  A wearable SOS device that sends a live location and
+                  emergency alert to family, the nearest police station, and
+                  the nearest hospital the instant its button is pressed
+                  &mdash; no phone unlock, no app to navigate, just one press
+                  in the moment it actually matters.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">ESP32</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">GPS Alerts</span>
+                  <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Flutter App</span>
+                </div>
+                <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors">
+                  View project details &rarr;
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mt-14 mb-8">Open-Source Projects</p>
+          <a
+            href="https://github.com/ZAN-Tech-bd/esp-wifi-provisioning"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col sm:flex-row sm:items-stretch rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all group overflow-hidden"
           >
-            <a href="mailto:nakibulislam54@gmail.com" class="group max-w-lg">
-              <h3
-                class="text-3xl md:text-5xl font-serif text-anthropic-text leading-tight flex flex-col md:flex-row md:items-center gap-4"
-              >
+            <div class="w-full sm:w-56 md:w-64 h-48 shrink-0 overflow-hidden bg-gray-100">
+              <img src="image/projects/zanwifisetup/setup-page.png" alt="ZanWifiSetup Wi-Fi setup web form shown on a phone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-5 flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-4 flex-wrap">
+                <div>
+                  <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-2">Arduino Library &middot; ESP32</p>
+                  <h3 class="font-medium text-lg mb-2">ZanWifiSetup</h3>
+                </div>
+                <span class="text-[11px] font-medium text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-2.5 py-1 shrink-0">MIT &middot; v1.1.0</span>
+              </div>
+              <p class="text-gray-600 leading-relaxed text-sm">
+                A one-time Wi-Fi provisioning library for ESP32: a fresh device
+                opens its own hotspot and a no-app web form to capture Wi-Fi
+                credentials, saves them to flash, and reconnects automatically
+                from then on &mdash; with onboard LED status and a hold-to-reset
+                button. Built and open-sourced under ZAN Tech so every new
+                ESP32 project gets Wi-Fi setup for free.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">ESP32</span>
+                <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Arduino / C++</span>
+                <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Wi-Fi Provisioning</span>
+              </div>
+              <span class="inline-flex items-center gap-1 mt-4 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors">
+                View on GitHub &rarr;
+              </span>
+            </div>
+          </a>
+        </section>
+
+        <!-- Education -->
+        <section class="py-14 border-t border-gray-200">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-8">Education</p>
+          <div class="space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
+              <p class="text-xs text-gray-500 sm:w-32 shrink-0 mb-1 sm:mb-0">In progress</p>
+              <div>
+                <h3 class="font-medium">MSc, Software Engineering</h3>
+                <p class="text-sm text-gray-500 mt-0.5">Independent University, Bangladesh</p>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
+              <p class="text-xs text-gray-500 sm:w-32 shrink-0 mb-1 sm:mb-0">2020&ndash;2024</p>
+              <div>
+                <h3 class="font-medium">BSc, Computer Science and Engineering</h3>
+                <p class="text-sm text-gray-500 mt-0.5">Independent University, Bangladesh</p>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
+              <p class="text-xs text-gray-500 sm:w-32 shrink-0 mb-1 sm:mb-0">2016&ndash;2018</p>
+              <div>
+                <h3 class="font-medium">HSC</h3>
+                <p class="text-sm text-gray-500 mt-0.5">Feni Government College</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="py-14 border-t border-gray-200 scroll-mt-20">
+          <div class="flex items-baseline justify-between flex-wrap gap-2 mb-8">
+            <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase">Publications &amp; Research</p>
+            <a
+              href="https://scholar.google.com/citations?user=ya3_CWsAAAAJ&amp;hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm font-medium border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors"
+              >Full profile on Google Scholar &rarr;</a
+            >
+          </div>
+          <div class="space-y-10">
+            <div class="flex flex-col sm:flex-row sm:gap-6 group">
+              <p class="text-xs text-gray-500 sm:w-16 shrink-0 mb-1 sm:mb-0">2025</p>
+              <div>
+                <h3 class="font-medium leading-snug">
+                  BILI: A Bilingual Domain-Specific Chatbot for Bangla Regional Language
+                </h3>
+                <p class="text-sm text-gray-500 mt-1">IEEE ICECET 2025 &middot; Co-author</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-2xl">
+                  A voice-and-text chatbot that understands Bangla <em>regional dialects</em>,
+                  not just standard Bangla, and replies in both Bangla and English.
+                  A CNN&ndash;BiLSTM model (trained on our BRADS dataset below) first
+                  identifies which of 8 regional dialects the speaker is using, then a
+                  speech-recognition + text-to-speech pipeline handles the actual
+                  conversation in real time, running on a Jetson Xavier NX board &mdash;
+                  aimed at people digital services currently leave out because they don't
+                  speak "standard" Bangla.
+                </p>
+                <a
+                  href="https://ieeexplore.ieee.org/abstract/document/11472360/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 mt-3 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
+                >
+                  Show publication &rarr;
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:gap-6 group">
+              <p class="text-xs text-gray-500 sm:w-16 shrink-0 mb-1 sm:mb-0">2025</p>
+              <div>
+                <h3 class="font-medium leading-snug">
+                  BRADS and BRWDS: Multipurpose Audio and Text Datasets for Automatic Bangla Regional Speech Recognition
+                </h3>
+                <p class="text-sm text-gray-500 mt-1">Data in Brief (Elsevier) &middot; Cited by 6</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-2xl">
+                  Bangla is the 7th most-spoken native language in the world, yet voice
+                  assistants barely support its regional dialects. We built and released
+                  a dataset to fix that: 2,439 audio clips of 298 commonly used words
+                  (233 of them regional, not standard Bangla), recorded by 85 volunteer
+                  speakers across 8 regions of Bangladesh &mdash; Dhaka, Chattogram,
+                  Barisal, Mymensingh, Rajshahi, Sylhet, Rangpur, and Khulna &mdash; and
+                  checked by university students for accuracy. It's free for other
+                  researchers to build regional Bangla speech-recognition systems on top
+                  of &mdash; the two open datasets behind it are below.
+                </p>
+                <a
+                  href="https://www.sciencedirect.com/science/article/pii/S2352340925008984"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 mt-3 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
+                >
+                  Show publication &rarr;
+                </a>
+              </div>
+            </div>
+
+            <!-- Datasets (underlying BRADS/BRWDS Mendeley data) -->
+            <div class="flex flex-col sm:flex-row sm:gap-6 group sm:ml-[88px]">
+              <div class="border-l-2 border-gray-200 pl-5 sm:pl-6">
+                <span class="text-[11px] font-medium tracking-wide text-gray-500 uppercase bg-gray-50 border border-gray-200 rounded-full px-2.5 py-0.5">Dataset</span>
+                <h3 class="font-medium leading-snug mt-2">
+                  BRADS: A Multipurpose Audio Dataset for Bangla Regional Word Detection
+                </h3>
+                <p class="text-sm text-gray-500 mt-1">Mendeley Data &middot; v2, Mar 6, 2025 &middot; DOI 10.17632/33khhwbhwn.2</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-2xl">
+                  2,439 audio recordings of 298 Bangla words (233 regional + 65
+                  standard/"chaste" Bangla), spoken by 85 native speakers across all 8
+                  divisions of Bangladesh, released as raw .wav files plus an .xlsx
+                  breakdown. Built to test whether regional accent and pronunciation
+                  hurt Bangla speech-recognition accuracy &mdash; the same word for
+                  "I" (আমি) is said completely differently in Chittagong, Barisal,
+                  Rajshahi, and Rangpur, for example.
+                </p>
+                <a
+                  href="https://data.mendeley.com/datasets/33khhwbhwn/2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 mt-3 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
+                >
+                  View dataset &rarr;
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:gap-6 group sm:ml-[88px]">
+              <div class="border-l-2 border-gray-200 pl-5 sm:pl-6">
+                <span class="text-[11px] font-medium tracking-wide text-gray-500 uppercase bg-gray-50 border border-gray-200 rounded-full px-2.5 py-0.5">Dataset</span>
+                <h3 class="font-medium leading-snug mt-2">
+                  BRWDS: A Multipurpose Dataset for Bangla Regional Word Detection
+                </h3>
+                <p class="text-sm text-gray-500 mt-1">Mendeley Data &middot; v3, Dec 2, 2024 &middot; DOI 10.17632/6pd2c48m66.3</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-2xl">
+                  A companion text dataset of 347 commonly used Bengali words showing how
+                  each one changes across the same 8 divisions, contributed by native
+                  speakers and cross-checked by 9 reviewers per division. Meant for
+                  building tools that detect a regional word and translate it into
+                  standard Bengali, closing communication gaps between regions.
+                </p>
+                <a
+                  href="https://data.mendeley.com/datasets/6pd2c48m66/3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 mt-3 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
+                >
+                  View dataset &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:gap-6 group">
+              <p class="text-xs text-gray-500 sm:w-16 shrink-0 mb-1 sm:mb-0">2025</p>
+              <div>
+                <h3 class="font-medium leading-snug">
+                  End-to-End Encrypted IoT System for Military Communications
+                </h3>
+                <p class="text-sm text-gray-500 mt-1">IEEE QPAIN 2025 &middot; Co-author</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-2xl">
+                  A secure communications system for military field units: short-range
+                  ESP-NOW radio for fast squad-to-squad messaging, backed by long-range
+                  LoRa for reaching a command center, with every message encrypted
+                  (AES-128 + authentication) and the encryption keys automatically
+                  rotated every 15 minutes. It keeps working under signal jamming, tracks
+                  unit locations in real time, and delivers messages across the mesh in
+                  under 50 milliseconds.
+                </p>
+                <a
+                  href="https://ieeexplore.ieee.org/abstract/document/11171856/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 mt-3 text-sm font-medium border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
+                >
+                  Show publication &rarr;
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:gap-6 group">
+              <p class="text-xs text-gray-500 sm:w-16 shrink-0 mb-1 sm:mb-0">2023</p>
+              <div>
+                <h3 class="font-medium leading-snug">
+                  IoT-based Salinity Detection Using Conductivity and Temperature for Developing Countries
+                </h3>
+                <p class="text-sm text-gray-500 mt-1">IEEE R10-HTC 2023 &middot; Cited by 4</p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2 max-w-2xl">
+                  A low-cost IoT sensor system that measures soil salinity in real time
+                  using conductivity and temperature readings, built for farmers in
+                  Bangladesh who need to make fast decisions about which crops to plant
+                  and when to irrigate. Field data showed salinity varies a lot from
+                  region to region, which is exactly the kind of thing this kind of
+                  cheap, scalable monitoring is meant to catch early.
+                </p>
+                <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-sm font-medium">
+                  <a
+                    href="https://ieeexplore.ieee.org/document/10461801"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1 border-b border-black pb-0.5 group-hover:text-gray-600 group-hover:border-gray-600 transition-colors"
+                  >
+                    Show publication &rarr;
+                  </a>
+                  <a
+                    href="projects/salinity.html"
+                    class="inline-flex items-center gap-1 text-gray-500 border-b border-transparent hover:text-black hover:border-black pb-0.5 transition-colors"
+                  >
+                    View project details &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-16 sm:py-20 border-t border-gray-200 scroll-mt-20">
+          <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+            <a href="mailto:nakibulislam54@gmail.com" class="group max-w-md">
+              <h3 class="text-2xl md:text-3xl font-semibold leading-tight flex items-center gap-3">
                 For any inquiries, feel free to reach out
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="36"
-                  height="36"
+                  width="24"
+                  height="24"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="1.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="transition-transform group-hover:translate-x-2 text-anthropic-accent shrink-0 hidden md:block"
+                  class="transition-transform group-hover:translate-x-2 shrink-0 hidden md:block"
                 >
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </h3>
             </a>
-            <div class="text-left md:text-right flex-shrink-0 space-y-2 pt-2 md:pt-0">
+            <div class="text-left md:text-right flex-shrink-0 space-y-2">
               <a
                 href="mailto:nakibulislam54@gmail.com"
-                class="text-xl font-medium text-anthropic-text hover:text-anthropic-accent transition-colors block"
+                class="text-lg font-medium hover:text-gray-600 transition-colors block break-all"
                 >nakibulislam54@gmail.com</a
               >
               <a
                 href="#"
-                class="text-sm font-medium text-anthropic-muted hover:text-anthropic-text transition-colors block border-b border-transparent hover:border-anthropic-text w-fit md:ml-auto pb-0.5"
+                class="text-sm font-medium text-gray-500 hover:text-black transition-colors block border-b border-transparent hover:border-black w-fit md:ml-auto pb-0.5"
                 >View Resume</a
               >
             </div>
@@ -490,25 +880,63 @@
       </main>
 
       <!-- Footer -->
-      <footer
-        class="flex flex-col md:flex-row justify-between items-center text-sm font-medium text-anthropic-muted pt-10 pb-8 border-t border-anthropic-border"
-      >
-        <p>Md Nakibul Islam — <span id="copyright-year">2024</span></p>
-        <div class="flex items-center space-x-6 mt-4 md:mt-0">
+      <footer class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500 py-8 border-t border-gray-200">
+        <p>Nakibul Islam &mdash; <span id="copyright-year">2024</span></p>
+        <div class="flex items-center space-x-6">
           <a
             href="https://www.linkedin.com/in/nakibulislam00/"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-anthropic-text transition-colors"
+            class="hover:text-black transition-colors"
             >LinkedIn</a
+          >
+          <a
+            href="https://github.com/ZAN-Tech-bd"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-black transition-colors"
+            >GitHub</a
+          >
+          <a
+            href="https://www.facebook.com/nakibulislam0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-black transition-colors"
+            >Facebook</a
+          >
+          <a
+            href="https://www.instagram.com/nakibulislam00/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-black transition-colors"
+            >Instagram</a
           >
         </div>
       </footer>
     </div>
     <script>
-      // Dynamically set the current year in the footer
       document.getElementById("copyright-year").textContent =
         new Date().getFullYear();
+
+      // Mobile nav toggle
+      const navToggle = document.getElementById("nav-toggle");
+      const mobileNav = document.getElementById("mobile-nav");
+      const iconOpen = document.getElementById("icon-open");
+      const iconClose = document.getElementById("icon-close");
+      navToggle.addEventListener("click", () => {
+        const isOpen = mobileNav.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        iconOpen.classList.toggle("hidden", isOpen);
+        iconClose.classList.toggle("hidden", !isOpen);
+      });
+      mobileNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileNav.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+          iconOpen.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+        });
+      });
     </script>
   </body>
 </html>

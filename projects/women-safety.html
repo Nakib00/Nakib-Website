@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Women Safety Device & System — an IoT SOS device and companion app by Nakibul Islam and team, sending instant location and emergency alerts to contacts, police, and hospitals." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Women Safety Device &amp; System — Nakibul Islam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['system-ui', '-apple-system', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #ffffff;
+        color: #0a0a0a;
+      }
+      ::selection {
+        background-color: #0a0a0a;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#0a0a0a] antialiased font-sans overflow-x-hidden">
+    <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-200">
+      <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6 py-4 flex justify-between items-center">
+        <a href="../index.html" class="font-semibold tracking-tight">Nakibul Islam</a>
+        <a href="../index.html#projects" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">&larr; Back to portfolio</a>
+      </div>
+    </header>
+
+    <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6">
+      <main class="py-12 sm:py-16">
+        <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-3">Research &amp; Hardware &middot; Independent University, Bangladesh</p>
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-4">
+          Women Safety Device &amp; System
+        </h1>
+        <div class="flex flex-wrap gap-2 mb-10">
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">ESP32</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">GPS</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">SMS Alerts</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Flutter</span>
+        </div>
+
+        <div class="prose-content text-base text-gray-700 leading-relaxed space-y-6 max-w-2xl">
+          <p>
+            The starting point for this project wasn't a spec sheet, it was
+            a pattern: women being pulled out of school and work because
+            walking home after dark wasn't safe, and having no real way to
+            call for help when it mattered. Working with Md Hana Sultan
+            Chowdhury and Sadman Saifee, I set out to build something a
+            person in that situation could actually use in the moment
+            &mdash; not an app they'd have to unlock, navigate, and tap
+            through while someone was already closing the distance.
+          </p>
+          <p>
+            The first version we built was direct about it: a wearable
+            device with an electric shock mechanism for immediate physical
+            defense, paired with a single button that, when pressed, sent
+            the wearer's real-time GPS location and an emergency message
+            straight to their family, the nearest police station, and the
+            nearest hospital &mdash; all three, automatically, from one
+            press. No decision-making required from someone who's already
+            in danger.
+          </p>
+          <p>
+            The system behind that button had to do more than just fire off
+            a text. Police stations and hospitals get a live location on a
+            map the moment an alert comes in, so response isn't delayed by
+            someone trying to describe where they are over a panicked
+            phone call. The companion app, built in Flutter so the same
+            codebase runs on both Android and iOS, is where a user manages
+            who gets notified and what the emergency message says.
+          </p>
+          <p>
+            Since the original research prototype, the core idea has kept
+            evolving into a cleaner physical product: a compact SOS button
+            built around an ESP32, a rechargeable LiPo battery, and USB-C
+            charging, small enough to clip onto a bag or keys. The
+            companion app runs quietly in the background and stays armed
+            even when it's closed, so the physical button works instantly
+            whether or not the phone is even unlocked &mdash; and the
+            alert it sends out includes a live Google Maps link to the
+            user's exact location, sent silently to every saved contact the
+            second the button is pressed.
+          </p>
+        </div>
+
+        <div class="mt-14">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">The System</p>
+          <div class="grid gap-6">
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/women-safety/poster.jpg" alt="Research poster: Women Safety Device and System, with abstract, objective, system working process, and technical features" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                The original research poster &mdash; the abstract, the
+                system's working process, and the case for why it needed
+                to exist.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/women-safety/device-render.jpg" alt="Product render of a compact white SOS button device with an exploded view showing the ESP32 module, SOS button PCB, LiPo battery, and USB-C port" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                Where the idea has gone since &mdash; a standalone SOS
+                button built around an ESP32 module, USB-C rechargeable,
+                small enough to carry every day.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/women-safety/app-home.jpg" alt="App home screen showing ARMED status, connected state, and a Stop Background Protection button" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                The app, armed and running in the background &mdash; the
+                physical button still works even if the app is closed.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/women-safety/app-settings.jpg" alt="Emergency Settings screen with saved contacts, an alert message, and a live message preview including a Google Maps location link" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                Emergency Settings: saved contacts and the exact alert
+                &mdash; including a live location link &mdash; that goes
+                out the instant the button is pressed, no tap required.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mt-14 pt-8 border-t border-gray-200">
+          <a href="../index.html#projects" class="inline-flex items-center gap-1.5 text-sm font-medium border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors">
+            &larr; Back to all projects
+          </a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IoT-Based Soil Salinity Detection System — a low-cost real-time monitoring device for farmers in Bangladesh and Myanmar, by Nakibul Islam and team, published at IEEE R10-HTC 2023." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>IoT-Based Soil Salinity Detection — Nakibul Islam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['system-ui', '-apple-system', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #ffffff;
+        color: #0a0a0a;
+      }
+      ::selection {
+        background-color: #0a0a0a;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#0a0a0a] antialiased font-sans overflow-x-hidden">
+    <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-200">
+      <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6 py-4 flex justify-between items-center">
+        <a href="../index.html" class="font-semibold tracking-tight">Nakibul Islam</a>
+        <a href="../index.html#projects" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">&larr; Back to portfolio</a>
+      </div>
+    </header>
+
+    <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6">
+      <main class="py-12 sm:py-16">
+        <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-3">Research &amp; Hardware &middot; Independent University, Bangladesh &middot; 2023</p>
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-4">
+          IoT-Based Soil Salinity Detection System
+        </h1>
+        <div class="flex flex-wrap gap-2 mb-10">
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">ESP8266</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Electrical Conductivity Sensor</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">ThingSpeak</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">IEEE R10-HTC 2023</span>
+        </div>
+
+        <div class="prose-content text-base text-gray-700 leading-relaxed space-y-6 max-w-2xl">
+          <p>
+            Across 93 upazilas in 18 coastal districts of Bangladesh, soil
+            salinity is high enough to hold crop production back &mdash;
+            and the same problem shows up across the border in coastal
+            Myanmar. The frustrating part is that the tools to actually
+            measure it, cheaply and in real time, mostly didn't exist for
+            the farmers who needed them. Working with Umme Aiman and Hana
+            Sultan Chowdhury, I built one.
+          </p>
+          <p>
+            The device itself is deliberately simple: an electrical
+            conductivity sensor and a waterproof temperature sensor, both
+            pushed into the soil, feeding readings into an ESP8266
+            microcontroller. Rather than requiring a lab test or a wait for
+            results, it gives a farmer a salinity reading on the spot,
+            processed and displayed immediately &mdash; and because the
+            whole build is housed in a small, portable enclosure, it can be
+            carried from field to field instead of being fixed in one
+            place.
+          </p>
+          <p>
+            Getting from "sensor reading" to "useful information" took its
+            own design process: work out how the device needed to be built
+            and carried, translate that design into working code in C,
+            then combine and test every module against the real design to
+            catch anything that didn't hold up. The payoff of doing that
+            properly is that the data doesn't just sit on the device &mdash;
+            it streams out to ThingSpeak and into a phone app, so temperature,
+            conductivity, and salinity can all be checked remotely, tracked
+            over time, and compared across different plots of land.
+          </p>
+          <p>
+            Cost was never an afterthought. Every component &mdash; the
+            ESP8266, the waterproof temperature sensor, the conductivity
+            bar, the housing &mdash; adds up to about 630 taka, well under
+            $10. That number matters more than the accuracy specs: a
+            monitoring tool that's genuinely useful to a smallholder farmer
+            in a developing country has to be something they can actually
+            afford, not a research prototype that only makes sense in a
+            lab. The field data backed up the reason the device needed to
+            exist in the first place &mdash; salinity varies significantly
+            from one region to the next, which means a single national
+            average is useless and site-specific, real-time measurement is
+            the only thing that actually helps.
+          </p>
+          <p>
+            The full methodology and findings are published at IEEE R10-HTC
+            2023, in my
+            <a href="https://ieeexplore.ieee.org/document/10461801" target="_blank" rel="noopener noreferrer" class="text-black border-b border-black hover:text-gray-600 hover:border-gray-600 transition-colors">Publications section</a>.
+          </p>
+        </div>
+
+        <div class="mt-14">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">The Build</p>
+          <div class="grid gap-6">
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/salinity/poster.jpg" alt="Research poster: IoT Based Water Salinity Detection, with executive summary, purpose, methodology, system diagram, and cost breakdown" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                The project poster &mdash; the full picture: purpose,
+                methodology, system diagram, and a full component-by-component
+                cost breakdown (630 taka total).
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/salinity/sensor-closeup.jpg" alt="Close-up of the salinity sensor housing with probes inserted into soil among crops" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                The sensor in the field &mdash; probes pushed directly into
+                the soil around the crop, exactly where the reading needs
+                to come from.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/salinity/app-dashboard.webp" alt="Mobile app dashboard showing live salinity, temperature, and electrical conductivity readings and charts over time" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                Readings streamed live to a mobile dashboard &mdash;
+                salinity, temperature, and electrical conductivity, tracked
+                over time instead of read once and forgotten.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mt-14 pt-8 border-t border-gray-200">
+          <a href="../index.html#projects" class="inline-flex items-center gap-1.5 text-sm font-medium border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors">
+            &larr; Back to all projects
+          </a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

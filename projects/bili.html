@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BILI — a bilingual, dialect-aware reception assistant robot for Bangladesh, built by Nakibul Islam and team to serve regional Bangla speakers." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>BILI: Reception Assistant Robot — Nakibul Islam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['system-ui', '-apple-system', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #ffffff;
+        color: #0a0a0a;
+      }
+      ::selection {
+        background-color: #0a0a0a;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#0a0a0a] antialiased font-sans overflow-x-hidden">
+    <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-200">
+      <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6 py-4 flex justify-between items-center">
+        <a href="../index.html" class="font-semibold tracking-tight">Nakibul Islam</a>
+        <a href="../index.html#projects" class="text-sm font-medium text-gray-600 hover:text-black transition-colors">&larr; Back to portfolio</a>
+      </div>
+    </header>
+
+    <div class="container mx-auto max-w-3xl lg:max-w-4xl px-4 sm:px-6">
+      <main class="py-12 sm:py-16">
+        <p class="text-xs font-medium tracking-widest text-gray-400 uppercase mb-3">Research &amp; Robotics &middot; Independent University, Bangladesh</p>
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-4">
+          BILI: A Bilingual, Dialect-Aware Reception Assistant Robot
+        </h1>
+        <div class="flex flex-wrap gap-2 mb-10">
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">CNN&ndash;BiLSTM</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Speech Recognition</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">NLU</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Text-to-Speech</span>
+          <span class="px-3 py-1 text-xs text-gray-700 bg-gray-50 border border-gray-200 rounded">Jetson Xavier NX</span>
+        </div>
+
+        <div class="prose-content text-base text-gray-700 leading-relaxed space-y-6 max-w-2xl">
+          <p>
+            Bangla has close to 300 million speakers, but almost every voice
+            assistant built for it only understands one version of it &mdash;
+            the "standard" dialect taught in schools and used in news
+            broadcasts. Walk into a university reception desk in Bangladesh
+            speaking Chittagonian, Sylheti, or Rangpuri instead, and most
+            digital systems simply stop understanding you. That gap &mdash;
+            not a lack of technology, but a lack of technology that actually
+            listens &mdash; is what BILI was built to close.
+          </p>
+          <p>
+            The idea, half-jokingly, started with JARVIS &mdash; the AI from
+            Iron Man that just talks to you, in your own way, without a menu
+            or a keyword to memorize. BILI is our attempt at a version of
+            that for a Bangladeshi university reception desk: something with
+            actual personality, that understands English, standard Bangla,
+            and regional dialects, and answers back in whichever one you
+            spoke to it in.
+          </p>
+          <p>
+            Getting there meant solving the dialect problem before anything
+            else. We trained a custom CNN&ndash;BiLSTM model on MFCC audio
+            features &mdash; the same acoustic fingerprints that make one
+            accent sound different from another &mdash; and got it to 96.8%
+            accuracy at identifying which of several Bangla dialects a
+            speaker was using. Once BILI knows the dialect, it switches the
+            speech-to-text model to match it, which cut word error rate by
+            as much as 47% for dialects like Chittagonian that standard
+            Bangla ASR systems badly mishandle.
+          </p>
+          <p>
+            From there, the rest of the conversation had to feel natural,
+            not scripted. An NLU layer pulls out what the person actually
+            wants &mdash; the intent and the specific details &mdash; and
+            checks it against a local knowledge base of university
+            information served through a Flask backend, so answers come
+            back fast without depending on the internet. The reply then
+            goes back out through text-to-speech in the same dialect the
+            question came in, so the whole exchange stays in the speaker's
+            own voice, not a generic one.
+          </p>
+          <p>
+            BILI now runs as a real reception assistant &mdash; on a screen,
+            and mounted on a physical robot people can walk up to and talk
+            with &mdash; at Independent University, Bangladesh. Beyond the
+            demo itself, the project produced open audio and text datasets
+            for Bangla dialects that other researchers can build on, which
+            is where the BRADS and BRWDS datasets on this site came from.
+            The published research behind it is in my
+            <a href="../index.html#publications" class="text-black border-b border-black hover:text-gray-600 hover:border-gray-600 transition-colors">Publications section</a>.
+          </p>
+        </div>
+
+        <div class="mt-14">
+          <p class="text-xs font-semibold tracking-widest text-gray-500 uppercase mb-6">How It Works</p>
+          <div class="grid gap-6">
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/bili/cnn-architecture.jpg" alt="CNN architecture diagram showing convolution, pooling, and fully connected layers for feature extraction and classification" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                The CNN pipeline behind dialect classification: convolution
+                and pooling layers pull features out of the audio, a fully
+                connected layer turns them into a decision.
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/bili/assistant-ui.jpg" alt="Billi Assistant chat interface with a terminal-style greeting message" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                BILI's interface, mid-conversation: "Hi my name is BIlli, ai
+                receptionist assistant of IUB, how may I help you?"
+              </figcaption>
+            </figure>
+            <figure class="rounded-xl overflow-hidden border border-gray-200">
+              <img src="../image/projects/bili/robot-demo.jpg" alt="A student talking to the physical BILI reception robot at Independent University, Bangladesh" class="w-full h-auto" />
+              <figcaption class="text-sm text-gray-500 px-4 py-3 border-t border-gray-200">
+                BILI in the flesh &mdash; a student talking to the physical
+                robot at the reception desk.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mt-14 pt-8 border-t border-gray-200">
+          <a href="../index.html#projects" class="inline-flex items-center gap-1.5 text-sm font-medium border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-600 transition-colors">
+            &larr; Back to all projects
+          </a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
